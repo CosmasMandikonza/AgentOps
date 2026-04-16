@@ -11,7 +11,7 @@ export async function POST() {
       return NextResponse.json(
         {
           success: false,
-          error: "Live mode is not enabled",
+          error: "Locus Control is in DEMO mode. Switch to LIVE to run this proof.",
         },
         { status: 409 },
       );

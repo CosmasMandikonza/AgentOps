@@ -3,7 +3,7 @@ import "server-only";
 export type LocusControlMode = "live" | "mock";
 
 type LocusControlState = {
-  overrideMode?: LocusControlMode;
+  overrideMode: LocusControlMode;
   updatedAt: string;
 };
 
@@ -20,6 +20,7 @@ function getState(): LocusControlState {
 
   if (!globalState.__agentOpsLocusControl) {
     globalState.__agentOpsLocusControl = {
+      overrideMode: getDefaultMode(),
       updatedAt: new Date().toISOString(),
     };
   }
